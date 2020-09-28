@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.Common;
+using System.Runtime.CompilerServices;
 
 namespace Zork
 {
@@ -31,7 +32,7 @@ namespace Zork
                         break;
 
                     case Commands.LOOK:
-                        Console.WriteLine("A rubber mat saying 'Welcome to Zork!' lies by the door.");
+                        Console.WriteLine(CurrentRoom.Description);
                         break;
 
                     case Commands.NORTH:
