@@ -20,6 +20,7 @@ namespace Zork
         static void Main(string[] args)
         {
             Console.WriteLine("Welcome to Zork!");
+<<<<<<< HEAD
             InitializeRooms();
 
 
@@ -36,10 +37,16 @@ namespace Zork
 >>>>>>> parent of 8a6811f... Zork - Part 3 (Completed)
 =======
 >>>>>>> parent of 8a6811f... Zork - Part 3 (Completed)
+=======
+            InitializeRoomDescriptions();
+
+
+>>>>>>> parent of 8a6811f... Zork - Part 3 (Completed)
             Commands command = Commands.UNKNOWN;
             while (command != Commands.QUIT)
             {
                 Console.WriteLine(CurrentRoom);
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -50,6 +57,8 @@ namespace Zork
                     Console.WriteLine(CurrentRoom.Description);
                     previousRoom = CurrentRoom;
                 }
+=======
+>>>>>>> parent of 8a6811f... Zork - Part 3 (Completed)
 =======
 >>>>>>> parent of 8a6811f... Zork - Part 3 (Completed)
 =======
@@ -161,6 +170,7 @@ namespace Zork
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             RoomMap = new Dictionary<string, Room>();
             foreach (Room room in Rooms)
             {
@@ -180,6 +190,19 @@ namespace Zork
         {
             Name = 0,
             Description
+=======
+            Rooms[0, 0].Description = "You are in a rock-strewn trail.";                                                                                //Rocky Trail
+            Rooms[0, 1].Description = "You are facing the south side of a white house. There is no door here, and all the windows are barred.";         //South of House
+            Rooms[0, 2].Description = "You are at the top of the Great Canyon on its south wall.";                                                      //Canyon View
+
+            Rooms[1, 0].Description = "This is a forest, with trees in all directions around you.";                                                     //Forest
+            Rooms[1, 1].Description = "This is an open field west of a white house, with a boarded front door.";                                        //West of House
+            Rooms[1, 2].Description = "You are behind the white house. In one corner of the house there is a small window which is slightly ajar.";     //Behind House
+
+            Rooms[2, 0].Description = "This is a dimly lit forest, with large trees all around. To the east, there appears to be sunglight.";           //Dense Woods
+            Rooms[2, 1].Description = "You are facing the north side of a white house. There is no door here, and all the windows are barred.";         //North of House
+            Rooms[2, 2].Description = "You are in a clearing, with a forest surrounding you on the west and south.";                                    //Clearing
+>>>>>>> parent of 8a6811f... Zork - Part 3 (Completed)
 =======
             Rooms[0, 0].Description = "You are in a rock-strewn trail.";                                                                                //Rocky Trail
             Rooms[0, 1].Description = "You are facing the south side of a white house. There is no door here, and all the windows are barred.";         //South of House
