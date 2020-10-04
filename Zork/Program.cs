@@ -20,61 +20,19 @@ namespace Zork
         static void Main(string[] args)
         {
             Console.WriteLine("Welcome to Zork!");
-<<<<<<< HEAD
-            InitializeRooms();
-
-
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-
->>>>>>> parent of 8a6811f... Zork - Part 3 (Completed)
-=======
->>>>>>> parent of 8a6811f... Zork - Part 3 (Completed)
-=======
->>>>>>> parent of 8a6811f... Zork - Part 3 (Completed)
-=======
->>>>>>> parent of 8a6811f... Zork - Part 3 (Completed)
-=======
             InitializeRoomDescriptions();
 
 
-<<<<<<< HEAD
->>>>>>> parent of 8a6811f... Zork - Part 3 (Completed)
-=======
->>>>>>> parent of 8a6811f... Zork - Part 3 (Completed)
             Commands command = Commands.UNKNOWN;
             while (command != Commands.QUIT)
             {
                 Console.WriteLine(CurrentRoom);
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
                 if (previousRoom != CurrentRoom)
                 {
                     Console.WriteLine(CurrentRoom.Description);
                     previousRoom = CurrentRoom;
                 }
-=======
->>>>>>> parent of 8a6811f... Zork - Part 3 (Completed)
-=======
->>>>>>> parent of 8a6811f... Zork - Part 3 (Completed)
-=======
->>>>>>> parent of 8a6811f... Zork - Part 3 (Completed)
-=======
->>>>>>> parent of 8a6811f... Zork - Part 3 (Completed)
-=======
->>>>>>> parent of 8a6811f... Zork - Part 3 (Completed)
-=======
->>>>>>> parent of 8a6811f... Zork - Part 3 (Completed)
-=======
->>>>>>> parent of 8a6811f... Zork - Part 3 (Completed)
+
                 Console.Write("> ");
                 command = ToCommand(Console.ReadLine().Trim());
 
