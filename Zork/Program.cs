@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.Common;
+using System.IO;
 using System.Runtime.CompilerServices;
+using Newtonsoft.Json;
 
 namespace Zork
 {
@@ -18,14 +20,14 @@ namespace Zork
         static void Main(string[] args)
         {
             Console.WriteLine("Welcome to Zork!");
-            InitializeRoomDescriptions();
+            InitializeRooms();
 
             Room previousRoom = null;
             Commands command = Commands.UNKNOWN;
             while (command != Commands.QUIT)
             {
                 Console.WriteLine(CurrentRoom);
-                if(previousRoom != CurrentRoom)
+                if (previousRoom != CurrentRoom)
                 {
                     Console.WriteLine(CurrentRoom.Description);
                     previousRoom = CurrentRoom;
@@ -113,23 +115,38 @@ namespace Zork
 
         private static (int Row, int Column) Location = (1, 1);
 
-        private static void InitializeRoomDescriptions()
+        private static void InitializeRooms(string roomsFilename)
         {
-            var roomMap = new Dictionary<string, Room>();
+            var rooms = JsonConvert.DeserializeObject<Room[]>(File.ReadAllText(roomsFilename));
+            foreach (Room room in rooms)
+            {
+                RoomMap[room.Name].Description = room.Description;
+            }
+        }
+
+        private static readonly Dictionary<string, Room> RoomMap;
+
+        static Program()
+        {
+            RoomMap = new Dictionary<string, Room>();
             foreach (Room room in Rooms)
             {
-                roomMap[room.Name] = room;
+                RoomMap[room.Name] = room;
             }
+        }
 
-            roomMap["Rocky Trail"].Description = "You are in a rock-strewn trail.";
-            roomMap["South of House"].Description = "You are facing the south side of a white house. There is no door here, and all the windows are barred.";
-            roomMap["Canyon View"].Description = "You are at the top of the Great Canyon on its south wall.";
-            roomMap["Forest"].Description = "This is a forest, with trees in all directions around you.";
-            roomMap["West of House"].Description = "This is an open field west of a white house, with a boarded front door.";
-            roomMap["Behind House"].Description = "You are behind the white house. In one corner of the house there is a small window which is slightly ajar.";
-            roomMap["Dense Woods"].Description = "This is a dimly lit forest, with large trees all around. To the east, there appears to be sunglight.";
-            roomMap["North of House"].Description = "You are facing the north side of a white house. There is no door here, and all the windows are barred.";
-            roomMap["Clearing"].Description = "You are in a clearing, with a forest surrounding you on the west and south.";
+        const string defaultRoomsFilename = "Rooms.txt";
+        string roomsFilename = (args.Length > 0 ? args[(int)CommandLineArguments.RoomsFilename] : defaultRoomsFilename);
+
+        private enum CommandLineArguments
+        {
+            RoomsFilename = 0
+        }
+
+        private enum Fields
+        {
+            Name = 0,
+            Description
         }
     }
 }
