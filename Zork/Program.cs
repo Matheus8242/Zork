@@ -20,8 +20,8 @@ namespace Zork
         static void Main(string[] args)
         {
             Console.WriteLine("Welcome to Zork!");
-            InitializeRoomDescriptions();
-
+            string roomsFilename = "Rooms.txt";
+            InitializeRoomDescriptions(roomsFilename);
 
             Commands command = Commands.UNKNOWN;
             while (command != Commands.QUIT)
@@ -116,12 +116,24 @@ namespace Zork
 
         private static (int Row, int Column) Location = (1, 1);
 
-        private static void InitializeRooms(string roomsFilename)
+        private static void InitializeRoomDescriptions(string roomsFilename)
         {
-            var rooms = JsonConvert.DeserializeObject<Room[]>(File.ReadAllText(roomsFilename));
-            foreach (Room room in rooms)
+            const string fieldDelimiter = "##";
+            const int expectedFieldCount = 2;
+            
+            string[] lines = File.ReadAllLines(roomsFilename);
+            foreach (string line in lines)
             {
-                RoomMap[room.Name].Description = room.Description;
+                string[] fields = line.Split(fieldDelimiter);
+                if (fields.Length != expectedFieldCount)
+                {
+                    throw new InvalidDataException("Invalid record.");
+                }
+
+                string name = fields[(int)Fields.Name];
+                string description = fields[(int)Fields.Description];
+
+                RoomMap[name].Description = description;
             }
         }
 
