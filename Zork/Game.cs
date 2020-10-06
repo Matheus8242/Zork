@@ -1,5 +1,6 @@
 ﻿using Newtonsoft.Json;
 using System;
+using System.IO;
 using System.Collections.Generic;
 using System.Text;
 
@@ -11,7 +12,7 @@ namespace Zork
         [JsonIgnore]
         public Player Player { get; private set; }
         [JsonIgnore]
-        private bool isRunning { get; set; }
+        private bool IsRunning { get; set; }
 
         public Game(World world, Player player)
         {
@@ -21,9 +22,9 @@ namespace Zork
 
         public void Run()
         {
-            isRunning = true;
+            IsRunning = true;
             Room previousRoom = null;
-            while (isRunning)
+            while (IsRunning)
             {
                 Console.WriteLine(Player.Location);
                 if (previousRoom != Player.Location)
@@ -38,7 +39,7 @@ namespace Zork
                 switch (command)
                 {
                     case Commands.QUIT:
-                        isRunning = false;
+                        IsRunning = false;
                         break;
 
                     case Commands.LOOK:
