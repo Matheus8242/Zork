@@ -40,7 +40,7 @@ namespace Zork
             }
 
             return isValidMove;
-        } 
+        }
     }
 
     public enum Directions

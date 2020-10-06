@@ -25,7 +25,7 @@ namespace Zork
             {
                 room.UpdateNeighbors(this);
             }
-        } 
+        }
 
         [JsonProperty]
         private string StartingLocation { get; set; }
