@@ -7,6 +7,7 @@ namespace Zork
 {
     public class Player
     {
+        public int Moves { get; set; }
         public World World { get; }
 
         [JsonIgnore]
