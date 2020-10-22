@@ -38,7 +38,7 @@ namespace Zork
         }
 
         public static bool operator !=(Command lhs, Command rhs) => !(lhs == rhs);
-        public override bool Equals(object obj) => obj is Command ? this == (Command)obj : false;
+        public override bool Equals(object obj) => obj is Command command && this == command;
         public bool Equals(Command other) => this == other;
         public override int GetHashCode() => Name.GetHashCode();
         public override string ToString() => Name;

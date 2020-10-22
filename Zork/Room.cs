@@ -37,7 +37,7 @@ namespace Zork
 
         public static bool operator !=(Room lhs, Room rhs) => !(lhs == rhs);
 
-        public override bool Equals(object obj) => obj is Room room ? this == room : false;
+        public override bool Equals(object obj) => obj is Room room && this == room;
 
         public bool Equals(Room other) => this == other;
 

@@ -112,11 +112,11 @@ namespace Zork
                 try
                 {
                     var scriptOptions = ScriptOptions.Default.AddReferences(Assembly.GetExecutingAssembly());
-
+#if DEBUG
                     scriptOptions = scriptOptions.WithEmitDebugInformation(true)
                                     .WithFilePath(new FileInfo(file).FullName)
                                     .WithFileEncoding(Encoding.UTF8);
-
+#endif
 
                     string script = File.ReadAllText(file);
                     CSharpScript.RunAsync(script, scriptOptions).Wait();
@@ -152,7 +152,7 @@ namespace Zork
 
         private void DisplayWelcomeMessage() => Console.WriteLine(WelcomeMessage);
 
-        public static readonly Random random = new Random();
+        public static readonly Random Random = new Random();
         private static readonly string ScriptDirectory = "Scripts";
         private static readonly string ScriptFileExtension = "*.csx";
 

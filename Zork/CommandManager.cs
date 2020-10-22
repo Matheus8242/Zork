@@ -37,9 +37,9 @@ namespace Zork
 
         public void AddCommand(Command command) => mCommands.Add(command);
         public void RemoveCommand(Command command) => mCommands.Remove(command);
-        public void AddCommands(IEnumerable<Command> commands) => mCommands.UnionWIth(commands);
+        public void AddCommands(IEnumerable<Command> commands) => mCommands.UnionWith(commands);
         public void ClearCommands() => mCommands.Clear();
 
-        private HashSet<Command> mCommands;
+        private readonly HashSet<Command> mCommands;
     }
 }
