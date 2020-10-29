@@ -49,6 +49,12 @@ namespace Zork
         North,
         South,
         East,
-        West
+        West,
+        Northeast,
+        Southeast,
+        Northwest,
+        Southwest,
+        Up,
+        Down
     }
 }
