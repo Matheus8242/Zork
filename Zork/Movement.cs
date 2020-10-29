@@ -8,10 +8,7 @@ namespace Zork
     public static class MovementCommands
     {
         [Command("NORTH", new string[] { "NORTH", "N" })]
-        public static void North(Game game, CommandContext commandContext) => Move(game, 
-            
-            
-            .North);
+        public static void North(Game game, CommandContext commandContext) => Move(game, Directions.North);
         [Command("SOUTH", new string[] { "SOUTH", "S" })]
         public static void South(Game game, CommandContext commandContext) => Move(game, Directions.South);
         [Command("EAST", new string[] { "EAST", "E" })]
