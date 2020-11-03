@@ -10,4 +10,8 @@ namespace Zork
         [Command("LOOK", new string[] { "LOOK", "L" })]
         public static void Look(Game game, CommandContext commandContext) => Console.WriteLine(game.Player.Location.Description);
     }
+
+    internal class CommandClassAttribute : Attribute
+    {
+    }
 }

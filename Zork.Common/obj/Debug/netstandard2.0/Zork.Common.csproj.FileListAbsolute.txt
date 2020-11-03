@@ -6,3 +6,4 @@ C:\Users\Matheus Campos\Documents\GitHub\Zork\Zork.Common\obj\Debug\netstandard2
 C:\Users\Matheus Campos\Documents\GitHub\Zork\Zork.Common\obj\Debug\netstandard2.0\Zork.Common.AssemblyInfo.cs
 C:\Users\Matheus Campos\Documents\GitHub\Zork\Zork.Common\obj\Debug\netstandard2.0\Zork.Common.dll
 C:\Users\Matheus Campos\Documents\GitHub\Zork\Zork.Common\obj\Debug\netstandard2.0\Zork.Common.pdb
+C:\Users\Matheus Campos\Documents\GitHub\Zork\Zork.Common\obj\Debug\netstandard2.0\Zork.Common.csproj.CoreCompileInputs.cache

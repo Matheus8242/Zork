@@ -1,0 +1,9 @@
+C:\Users\Matheus Campos\Documents\GitHub\Zork\InventoryManager.Data\bin\Debug\netstandard2.0\InventoryManager.Data.deps.json
+C:\Users\Matheus Campos\Documents\GitHub\Zork\InventoryManager.Data\bin\Debug\netstandard2.0\InventoryManager.Data.dll
+C:\Users\Matheus Campos\Documents\GitHub\Zork\InventoryManager.Data\bin\Debug\netstandard2.0\InventoryManager.Data.pdb
+C:\Users\Matheus Campos\Documents\GitHub\Zork\InventoryManager.Data\obj\Debug\netstandard2.0\InventoryManager.Data.csprojAssemblyReference.cache
+C:\Users\Matheus Campos\Documents\GitHub\Zork\InventoryManager.Data\obj\Debug\netstandard2.0\InventoryManager.Data.AssemblyInfoInputs.cache
+C:\Users\Matheus Campos\Documents\GitHub\Zork\InventoryManager.Data\obj\Debug\netstandard2.0\InventoryManager.Data.AssemblyInfo.cs
+C:\Users\Matheus Campos\Documents\GitHub\Zork\InventoryManager.Data\obj\Debug\netstandard2.0\InventoryManager.Data.csproj.CoreCompileInputs.cache
+C:\Users\Matheus Campos\Documents\GitHub\Zork\InventoryManager.Data\obj\Debug\netstandard2.0\InventoryManager.Data.dll
+C:\Users\Matheus Campos\Documents\GitHub\Zork\InventoryManager.Data\obj\Debug\netstandard2.0\InventoryManager.Data.pdb

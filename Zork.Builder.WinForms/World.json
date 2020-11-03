@@ -1,0 +1,17 @@
+{
+    "Players": [
+        {
+            "Name": "Adventurer",
+            "Health": 100,
+            "Score": 0
+        }
+    ],
+    "Items": [
+        {
+            "Name": "Book"
+        },
+        {
+            "Name": "Lantern"
+        }
+    ]
+}
