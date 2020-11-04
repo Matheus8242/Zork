@@ -28,11 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.Label fileLabel;
             this.SelectFileButton = new System.Windows.Forms.Button();
             this.FileNameTextBox = new System.Windows.Forms.TextBox();
             this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
+            this.worldViewModelBindingSource = new System.Windows.Forms.BindingSource(this.components);
             fileLabel = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.worldViewModelBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // fileLabel
@@ -56,6 +59,7 @@
             // 
             // FileNameTextBox
             // 
+            this.FileNameTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.worldViewModelBindingSource, "Filename", true));
             this.FileNameTextBox.Location = new System.Drawing.Point(52, -3);
             this.FileNameTextBox.Name = "FileNameTextBox";
             this.FileNameTextBox.ReadOnly = true;
@@ -65,6 +69,10 @@
             // openFileDialog
             // 
             this.openFileDialog.Filter = "World Files(\"json)|\".json";
+            // 
+            // worldViewModelBindingSource
+            // 
+            this.worldViewModelBindingSource.DataSource = typeof(Zork.Builder.WinForms.ViewModels.WorldViewModel);
             // 
             // MainForm
             // 
@@ -78,6 +86,7 @@
             this.MaximizeBox = false;
             this.Name = "MainForm";
             this.Text = "Zork Builder";
+            ((System.ComponentModel.ISupportInitialize)(this.worldViewModelBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -88,6 +97,7 @@
         private System.Windows.Forms.Button SelectFileButton;
         private System.Windows.Forms.TextBox FileNameTextBox;
         private System.Windows.Forms.OpenFileDialog openFileDialog;
+        private System.Windows.Forms.BindingSource worldViewModelBindingSource;
     }
 }
 
