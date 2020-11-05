@@ -19,7 +19,14 @@ namespace Zork.Builder.WinForms
         private WorldViewModel ViewModel
         {
             get => mViewModel;
-            set => mViewModel = value;
+            set
+            {
+                if (mViewModel != value)
+                {
+                    mViewModel = value;
+                    worldViewModelBindingSource.DataSource = mViewModel;
+                }
+            }
         }
         public MainForm()
         {
@@ -29,7 +36,7 @@ namespace Zork.Builder.WinForms
 
         private void SelectFileButton_Click(object sender, EventArgs e)
         {
-            if(openFileDialog.ShowDialog() == DialogResult.OK)
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
             {
                 ViewModel.World = JsonConvert.DeserializeObject<World>(File.ReadAllText(openFileDialog.FileName));
                 ViewModel.Filename = openFileDialog.FileName;
@@ -37,5 +44,20 @@ namespace Zork.Builder.WinForms
         }
 
         private WorldViewModel mViewModel;
+
+        private void FileNameTextBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void playerBindingSource_CurrentChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void playersBindingSource_CurrentChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
