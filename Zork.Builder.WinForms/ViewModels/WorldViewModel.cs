@@ -8,6 +8,8 @@ namespace Zork.Builder.WinForms.ViewModels
     {
         public event PropertyChangedEventHandler PropertyChanged;
         public string Filename { get; set; }
+        public BindingList<Player> Player { get; set; }
+        public BindingList<Item> Items { get; set; }
         public World World { get; set; }
     }
 }
